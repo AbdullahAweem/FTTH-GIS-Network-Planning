@@ -1,27 +1,54 @@
-# WebGIS Development
+# FTTH Network Planning and Monitoring Web GIS Portal
 
-This folder is reserved for future development of a WebGIS platform for telecom infrastructure management.
+A PostGIS-backed Web GIS application for FTTH network planning, asset visualization, FDH-wise analysis, search, and reporting.
 
-The planned WebGIS solution will integrate GIS data, telecom assets, infrastructure analytics, and dashboard functionality into a centralized web-based environment.
+## Project Overview
 
-## Planned Technologies
+This project is a role-based FTTH Network Planning and Monitoring Web GIS Portal developed using Python, Streamlit, PostgreSQL/PostGIS, GeoPandas, Folium, Plotly, and ReportLab.
 
+The system is designed for telecom GIS and FTTH planning workflows. It allows users to visualize network assets, analyze FDH areas, inspect layer data, search assets, calculate engineering KPIs, and generate reports.
+
+## Key Features
+
+- Role-based login system
+- Secure PostgreSQL/PostGIS database integration
+- Interactive FTTH network map
+- FDH-wise filtering and analysis
+- Dashboard KPIs for FTTH assets
+- Layer-wise spatial data viewing
+- Asset search by FDH, plot, cable, structure, and splice information
+- Cable and duct length summaries
+- Structure and boundary summaries
+- CSV export
+- PDF report generation
+- PTCL-inspired professional interface
+
+## Technology Stack
+
+- Python
 - Streamlit
-- Folium
 - PostgreSQL
 - PostGIS
-- Python
+- GeoPandas
+- Folium
+- Streamlit-Folium
+- Plotly
+- Pandas
+- SQLAlchemy
+- psycopg2
+- ReportLab
+- bcrypt
 
-## Planned Features
+## Main Modules
 
-- Interactive Fiber Network Visualization
-- Asset Management
-- Infrastructure Querying
-- Serviceability Analysis
-- Dashboard Integration
-- Real-Time Monitoring
-- User-Based Access Control
-
-## Future Vision
-
-The goal is to transform the current desktop GIS workflow into a scalable enterprise-grade WebGIS platform capable of supporting telecom planning, operations, and maintenance activities.
+```text
+app.py
+database/
+  connection.py
+  postgis_loader.py
+  users.py
+  search_queries.py
+utils/
+  pdf_report.py
+assets/
+  logo.png

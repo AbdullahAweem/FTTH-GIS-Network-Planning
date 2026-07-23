@@ -1,0 +1,12 @@
+streamlit
+geopandas
+fiona
+folium
+streamlit-folium
+plotly
+pandas
+psycopg2-binary
+sqlalchemy
+geoalchemy2
+bcrypt
+reportlab
