@@ -1,7 +1,10 @@
 import streamlit as st
 import geopandas as gpd
 import datetime
-import fiona
+try:
+    import fiona
+except ImportError:
+    fiona = None
 import folium
 from streamlit_folium import st_folium
 import plotly.express as px
