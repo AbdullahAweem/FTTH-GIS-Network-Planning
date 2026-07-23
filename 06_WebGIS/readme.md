@@ -56,6 +56,9 @@ assets/
   ## Live Demo
 
 This project is deployed as a portfolio demo on Streamlit Cloud.
+## Live Demo
+
+🔗 Live App: https://ftth-gis-network-planning-2geuduvrwpamygyajkqpwv.streamlit.app/
 
 Demo Login:
 
