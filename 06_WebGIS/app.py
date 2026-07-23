@@ -1491,19 +1491,24 @@ if page == "📊 Dashboard":
 
         if not summary_table.empty:
             # Style the table
-            st.dataframe(
-                summary_table.style.background_gradient(
-                    subset=["Utilization %"], cmap="RdYlGn"
-                ).format({
-                    "Utilization %": "{:.1f}%",
-                    "1-Way (km)":    "{:.3f}",
-                    "2-Way (km)":    "{:.3f}",
-                    "UG 12F (km)":   "{:.3f}",
-                    "UG 24F (km)":   "{:.3f}",
-                    "UG 48F (km)":   "{:.3f}",
-                }),
-                use_container_width=True, hide_index=True
-            )
+            summary_table_display = summary_table.copy()
+
+            if "Utilization %" in summary_table_display.columns:
+                    summary_table_display["Utilization %"] = summary_table_display["Utilization %"].map(
+                        lambda x: f"{x:.1f}%" if pd.notnull(x) else ""
+                    )
+
+            for col in ["1-Way (km)", "2-Way (km)", "UG 12F (km)", "UG 24F (km)", "UG 48F (km)"]:
+                if col in summary_table_display.columns:
+                        summary_table_display[col] = summary_table_display[col].map(
+                            lambda x: f"{x:.3f}" if pd.notnull(x) else ""
+                        )
+
+                st.dataframe(
+                    summary_table_display,
+                    use_container_width=True,
+                    hide_index=True
+                )
 
             # Export buttons
             ec1, ec2 = st.columns(2)
