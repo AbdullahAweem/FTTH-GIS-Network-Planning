@@ -52,3 +52,14 @@ utils/
   pdf_report.py
 assets/
   logo.png
+
+  ## Live Demo
+
+This project is deployed as a portfolio demo on Streamlit Cloud.
+
+Demo Login:
+
+- Username: `admin`
+- Password: `demo123`
+
+Note: The deployed version runs in demo mode using sample FTTH GIS data. The full local version connects to PostgreSQL/PostGIS.
